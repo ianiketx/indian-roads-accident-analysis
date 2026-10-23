@@ -51,9 +51,8 @@ fig.text(0.07, 0.875, f"In {int(first['year'])}, about {first['severity']:.0f} p
 fig.text(0.07, 0.835, f"By {int(last['year'])}, it was {last['severity']:.0f}.", fontsize=19, color=INK)
 fig.text(0.07, 0.775, f"That's roughly {round(deaths_per_day, -1):.0f} lives lost every day in {int(last['year'])}.",
          fontsize=17, color=RED, fontweight="bold")
-fig.text(0.07, 0.085, "Data: MoRTH, Road Accidents in India reports (2001 to 2024); 2025 figures given to Parliament, July 2026",
+fig.text(0.07, 0.06, "Data: MoRTH, Road Accidents in India reports (2001 to 2024); 2025 figures given to Parliament, July 2026",
          fontsize=12.5, color=MUTED)
-fig.text(0.07, 0.055, "Made in Python by Aniket Bansal", fontsize=12.5, color=MUTED)
 
 fig.savefig(HERE / "severity_trend.png", dpi=100, facecolor=BG)
 print(df[["year", "accidents", "deaths", "severity"]].round(1).to_string(index=False))
