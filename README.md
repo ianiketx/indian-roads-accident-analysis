@@ -39,6 +39,7 @@ MLflow Experiment Tracking
 ├── 01_EDA.ipynb                  # Exploratory Data Analysis
 ├── 02_Preprocessing.ipynb        # Cleaning & Feature Engineering  
 ├── 03_Modelling.ipynb            # Model Training & Evaluation
+├── national-trends/              # Official national data, chart and script
 └── README.md
 ```
 
@@ -56,6 +57,29 @@ Indian cities with 24 features including:
 
 **Cities covered**: Mumbai, Delhi, Bangalore, Chennai,
 Kolkata, Hyderabad, Pune, Chandigarh
+
+---
+
+## 🇮🇳 Why severity matters: the national picture
+
+The model above uses a synthetic dataset. To ground the question in reality, I also looked at India's official national figures.
+
+![Deaths per 100 road accidents in India, 2001 to 2025](national-trends/severity_trend.png)
+
+- In **2001**, about **20 people died for every 100 road crashes** in India.
+- By **2025**, it was **36**, roughly **500 deaths every day**.
+- Accidents grew far more slowly than deaths, so each crash has become much more likely to be fatal. That is why predicting **severity**, not just counts, matters.
+
+| Year | Accidents | Deaths | Deaths per 100 accidents |
+|---|---|---|---|
+| 2001 | 4,05,637 | 80,888 | 19.9 |
+| 2023 | 4,80,583 | 1,72,890 | 36.0 |
+| 2024 | 4,87,707 | 1,77,175 | 36.3 |
+| 2025 | 5,13,563 | 1,83,382 | 35.7 |
+
+**Files:** [`national-trends/`](national-trends/) has the full yearly data (with sources) and the script that draws the chart (`python national-trends/severity_chart.py`).
+
+**Sources:** Ministry of Road Transport & Highways, *Road Accidents in India* reports (2001 to 2024); 2025 figures from the Minister's written reply to the Lok Sabha, July 2026. Severity is calculated as deaths ÷ accidents × 100.
 
 ---
 
